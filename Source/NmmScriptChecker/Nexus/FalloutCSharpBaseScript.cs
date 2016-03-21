@@ -1,5 +1,6 @@
 ﻿using System;
 using Nexus.Client.ModManagement.Scripting.CSharpScript;
+using Nexus.Client.Games.Gamebryo.Tools.TESsnip;
 
 namespace Nexus.Client.Games.Fallout3.Scripting.CSharpScript
 {
@@ -279,21 +280,10 @@ namespace Nexus.Client.Games.Fallout3.Scripting.CSharpScript
         {
             return false;
         }
-
-        
-
-        
-
-        
-        
-        
         
         public static void SetupScriptCompiler(TesPlugin[] p_plgPlugins)
         {
         }
-
-        
-        
         
         public static void CompileResultScript(SubRecord sr, out Record r2, out string msg)
         {
