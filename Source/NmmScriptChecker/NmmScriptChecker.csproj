@@ -69,6 +69,7 @@
     <Compile Include="Nexus\UIUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SafeIO.cs" />
     <Compile Include="ScriptChecker.cs" />
     <Compile Include="ScriptCompiler.cs" />
     <Compile Include="ScriptCheckerMessage.cs" />

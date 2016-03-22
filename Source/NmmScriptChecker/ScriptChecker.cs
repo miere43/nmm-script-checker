@@ -45,8 +45,13 @@ namespace NmmScriptChecker
             Warnings.Add(new ScriptCheckerMessage(warningMessage, solutionMessage));
         }
 
-        public void Check(CompilerResults results)
+        public void Check()
         {
+            Errors.Clear();
+            Warnings.Clear();
+
+            CompilerResults results = scriptCompiler.Results;
+
             Assembly compiledAssembly = results.CompiledAssembly;
             Type scriptClassType = compiledAssembly.GetType("Script");
             if (scriptClassType == null)

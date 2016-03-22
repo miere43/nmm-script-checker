@@ -4,9 +4,6 @@ using System.Drawing;
 
 namespace Nexus.Client.ModManagement.Scripting.CSharpScript
 {
-    /// <summary>
-    /// Implements the functions availabe to C# scripts.
-    /// </summary>
     public class CSharpScriptFunctionProxy : ScriptFunctionProxy
     {
         public CSharpScriptFunctionProxy(IMod p_modMod, IGameMode p_gmdGameMode, IEnvironmentInfo p_eifEnvironmentInfo, InstallerGroup p_igpInstallers, UIUtil p_uipUIProxy)

@@ -23,21 +23,21 @@ namespace NmmScriptChecker
         static Regex scriptClassRegex = new Regex(@"(class\s+Script\s*:.*?)(\S*BaseScript)");
         static Regex usingFommRegex = new Regex(@"\s*using\s*fomm.Scripting\s*;");
 
-        public string Path { get; private set; }
-
         public CompilerResults Results { get; private set; }
 
         public Type ScriptDerivedType { get; private set; }
 
-        public ScriptCompiler(string path)
+        public ScriptCompiler()
         {
-            Path = path;
         }
 
-        public bool Compile()
+        public bool CompileFile(string path)
         {
-            string code = File.ReadAllText(Path);
+            return CompileCode(SafeIO.ReadAllText(path));
+        }
 
+        public bool CompileCode(string code)
+        {
             string baseScriptClassName = scriptClassRegex.Match(code).Groups[2].ToString().Trim();
             Type baseScriptType;
 
@@ -90,7 +90,7 @@ namespace NmmScriptChecker
             parameters.GenerateExecutable = false;
 
             parameters.OutputAssembly = System.IO.Path.GetTempFileName();
-            parameters.IncludeDebugInformation = false;
+            parameters.IncludeDebugInformation = true;
 
             parameters.ReferencedAssemblies.Add("System.dll");
             parameters.ReferencedAssemblies.Add("System.Drawing.dll");
@@ -105,7 +105,6 @@ namespace NmmScriptChecker
             
             CompilerResults results = provider.CompileAssemblyFromSource(parameters, code);
             Results = results;
-
             return !results.Errors.HasErrors;
         }
     }

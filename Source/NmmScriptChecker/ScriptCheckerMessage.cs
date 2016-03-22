@@ -17,7 +17,10 @@ namespace NmmScriptChecker
         public ScriptCheckerMessage(string errorMessage, string solutionMessage = null)
         {
             Message = errorMessage;
-            SolutionMessage = solutionMessage;
+            if (string.IsNullOrWhiteSpace(solutionMessage))
+                SolutionMessage = null;
+            else
+                SolutionMessage = solutionMessage;
         }
     }
 }
