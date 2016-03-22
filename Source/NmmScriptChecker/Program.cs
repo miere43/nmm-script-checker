@@ -36,8 +36,10 @@ namespace NmmScriptChecker
             Console.WriteLine(
                 "NmmScriptChecker.exe <path to C# script> [--help --nopause]\n"
               + "Checks C# installer script for Nexus Mod Manager for being valid.\n"
-              + "--help          Print this help\n"
-              + "--nopause       Close prompt after checking\n"
+              + "--help              Print this help\n"
+              + "--nopause           Close prompt after checking\n"
+              + "--watch             Watch script for changes\n"
+              + "--compiler-warnings Show compiler warnings\n"
             );
         }
 
