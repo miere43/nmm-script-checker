@@ -1,5 +1,5 @@
 # NMM Script Checker (validator)
-Validates C# installer scripts for Nexus Mod Manager for being valid. Tested on Quality Roads for Skyrim script and SkyUI installer script.
+Validates C# installer scripts for Nexus Mod Manager for being valid. Tested on Quality Roads for Skyrim script and SkyUI installer script. 
 
 ## Usage
 ```
